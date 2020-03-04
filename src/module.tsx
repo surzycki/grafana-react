@@ -3,7 +3,7 @@ import './css/panel.light.scss';
 
 import { PanelProps, PanelPlugin } from '@grafana/data';
 import React, { PureComponent } from 'react';
-
+import { Canvas } from 'react-three-fiber'
 
 // TODO: make styles local for panel
 //loadPluginCss({
@@ -16,9 +16,10 @@ export class ReactPanelTemplate extends PureComponent<PanelProps> {
 
   render() {
     return (
-      <div className="hello">
-        Hello cc <b>my panel yo</b>
-      </div>
+      <Canvas>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+      </Canvas>
     );
   }
 
