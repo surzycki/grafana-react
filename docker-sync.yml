@@ -1,0 +1,12 @@
+version: "2"
+
+options:
+  compose-dev-file-path: 'docker-compose-sync.yml'
+  compose-file-path: 'docker-compose.yml'
+syncs:
+  grafana-react-sync:
+    src: '.'
+    sync_excludes: ['.git','log/*.log', 'tmp/*', '.cache/*','.DS_Store']
+    monit_enable: true
+    monit_interval: 30
+    monit_high_cpu_cycles: 4

@@ -1,0 +1,15 @@
+version: '3'
+volumes:
+  grafana-storage:
+    external: false
+
+services:
+  dev:
+    build: .
+    hostname: graphana
+    ports:
+      - 80:3000
+      - 6060:6060
+    volumes:
+    - .:/~:cached
+    - grafana-storage:/var/lib/grafana

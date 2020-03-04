@@ -1,0 +1,12 @@
+# this is our development docker-compose for testing the docker-sync
+# to speed up rails and development
+version: "3"
+services:
+  dev:
+    volumes:
+      - grafana-react-sync:/data/plugins:nocopy # will be mounted on /var/www
+
+# that the important thing
+volumes:
+  grafana-react-sync:
+    external: true
